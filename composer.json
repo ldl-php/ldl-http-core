@@ -1,0 +1,21 @@
+{
+    "name": "ldl-framework/http-core",
+    "description": "LDL HTTP Core Request/Response libraries",
+    "type": "library",
+    "require": {
+        "symfony/http-foundation": "~5.1",
+        "symfony/mime": "~5.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Stange",
+            "email": "jpfstange@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LDL\\": "src/"
+        }
+    }
+}
