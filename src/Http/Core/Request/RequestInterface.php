@@ -1,6 +1,6 @@
 <?php
 
-namespace LDL\HTTP\Core\Request;
+namespace LDL\Http\Core\Request;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -23,12 +23,12 @@ interface RequestInterface
     public function getClientIp(): string;
 
     /**
-     * @param      $variable
+     * @param string $variable
      * @param null $default
      *
      * @return mixed
      */
-    public function get($variable, $default = null);
+    public function get(string $variable, $default = null);
 
     /**
      * Returns contents of the request body.

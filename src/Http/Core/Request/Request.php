@@ -1,6 +1,6 @@
 <?php
 
-namespace LDL\HTTP\Core\Request;
+namespace LDL\Http\Core\Request;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;

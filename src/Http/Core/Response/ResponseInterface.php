@@ -1,6 +1,6 @@
 <?php
 
-namespace LDL\HTTP\Core\Request;
+namespace LDL\Http\Core\Response;
 
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
