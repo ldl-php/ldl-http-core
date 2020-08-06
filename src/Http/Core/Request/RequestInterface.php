@@ -27,7 +27,7 @@ interface RequestInterface
      * The _method request parameter can also be used to determine the HTTP method,
      * but only if enableHttpMethodParameterOverride() has been called.
      *
-     * The method is always an uppercased string.
+     * The method is always an upper cased string.
      *
      * @return string The request method
      *
