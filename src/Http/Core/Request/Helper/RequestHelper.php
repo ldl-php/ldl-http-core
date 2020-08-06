@@ -7,11 +7,20 @@ use LDL\Http\Core\Request\RequestInterface;
 class RequestHelper
 {
     /**
-     * {@inheritdoc}
+     * @param string $method
+     * @return bool
      */
     public static function isHttpMethodValid(string $method): bool
     {
-        $validTypes = [
+        return in_array($method, self::getAvailableHttpMethods(), true);
+    }
+
+    /**
+     * @return array
+     */
+    public static function getAvailableHttpMethods(): array
+    {
+        return [
             RequestInterface::HTTP_METHOD_OPTIONS,
             RequestInterface::HTTP_METHOD_HEAD,
             RequestInterface::HTTP_METHOD_GET,
@@ -23,7 +32,5 @@ class RequestHelper
             RequestInterface::HTTP_METHOD_TRACE,
             RequestInterface::HTTP_METHOD_CONNECT
         ];
-
-        return in_array($method, $validTypes, true);
     }
 }
