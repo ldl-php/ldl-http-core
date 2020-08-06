@@ -35,6 +35,13 @@ interface RequestInterface
     public function getMethod(): string;
 
     /**
+     * Returns the requested URI (path and query string).
+     *
+     * @return string The raw URI (i.e. not URI decoded)
+     */
+    public function getRequestUri(): string;
+
+    /**
      * Checks if a request is of pre flight type (OPTIONS).
      */
     public function isPreFlight(): bool;
