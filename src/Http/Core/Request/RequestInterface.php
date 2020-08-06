@@ -19,6 +19,22 @@ interface RequestInterface
     public const HTTP_METHOD_CONNECT = 'CONNECT';
 
     /**
+     * Gets the request "intended" method.
+     *
+     * If the X-HTTP-Method-Override header is set, and if the method is a POST,
+     * then it is used to determine the "real" intended HTTP method.
+     *
+     * The _method request parameter can also be used to determine the HTTP method,
+     * but only if enableHttpMethodParameterOverride() has been called.
+     *
+     * The method is always an uppercased string.
+     *
+     * @return string The request method
+     *
+     */
+    public function getMethod(): string;
+
+    /**
      * Checks if a request is of pre flight type (OPTIONS).
      */
     public function isPreFlight(): bool;
