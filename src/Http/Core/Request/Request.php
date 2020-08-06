@@ -13,7 +13,7 @@ class Request extends SymfonyRequest implements RequestInterface
      */
     public function isPreFlight(): bool
     {
-        return $this->isMethod('OPTIONS');
+        return $this->isMethod(RequestInterface::HTTP_METHOD_OPTIONS);
     }
 
     /**
@@ -32,5 +32,77 @@ class Request extends SymfonyRequest implements RequestInterface
     public function getQuery(): ParameterBag
     {
         return $this->query;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isHead(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_HEAD);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isGet(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_GET);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isPost(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_POST);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isPut(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_PUT);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isPatch(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_PATCH);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isDelete(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_DELETE);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isPurge(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_PURGE);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isTrace(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_TRACE);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isConnect(): bool
+    {
+        return $this->isMethod(RequestInterface::HTTP_METHOD_CONNECT);
     }
 }
