@@ -42,11 +42,6 @@ interface RequestInterface
     public function get(string $variable, $default = null);
 
     /**
-     * @return bool
-     */
-    public function isHttpMethodValid(): bool;
-
-    /**
      * Returns contents of the request body.
      *
      * @return mixed

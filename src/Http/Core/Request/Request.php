@@ -37,27 +37,6 @@ class Request extends SymfonyRequest implements RequestInterface
     /**
      * {@inheritdoc}
      */
-    public function isHttpMethodValid(): bool
-    {
-        $validTypes = [
-            RequestInterface::HTTP_METHOD_OPTIONS,
-            RequestInterface::HTTP_METHOD_HEAD,
-            RequestInterface::HTTP_METHOD_GET,
-            RequestInterface::HTTP_METHOD_POST,
-            RequestInterface::HTTP_METHOD_PUT,
-            RequestInterface::HTTP_METHOD_PATCH,
-            RequestInterface::HTTP_METHOD_DELETE,
-            RequestInterface::HTTP_METHOD_PURGE,
-            RequestInterface::HTTP_METHOD_TRACE,
-            RequestInterface::HTTP_METHOD_CONNECT
-        ];
-
-        return in_array($this->getMethod(), $validTypes, true);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function isHead(): bool
     {
         return $this->isMethod(RequestInterface::HTTP_METHOD_HEAD);
