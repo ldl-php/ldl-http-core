@@ -1,5 +1,7 @@
 <?php
 
+namespace LDL\Http\Core\Request\Helper;
+
 use LDL\Http\Core\Request\RequestInterface;
 
 class RequestHelper
