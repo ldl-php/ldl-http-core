@@ -106,6 +106,11 @@ class Request extends SymfonyRequest implements RequestInterface
         return $this->isMethod(RequestInterface::HTTP_METHOD_CONNECT);
     }
 
+    public function getRequestUri(): string
+    {
+        return parent::getRequestUri();
+    }
+
     public function getMethod() : string
     {
         return (string) parent::getMethod();
