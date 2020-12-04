@@ -8,7 +8,6 @@ use LDL\Type\Collection\Traits\Validator\KeyValidatorChainTrait;
 use LDL\Type\Collection\Traits\Validator\ValueValidatorChainTrait;
 use LDL\Type\Collection\Types\Integer\Validator\IntegerValidator;
 use LDL\Type\Collection\Validator\NumericRangeValidator;
-use LDL\Type\Collection\Validator\UniqueValidator;
 
 class HttpCodeKeyCollection extends AbstractCollection implements HttpCodeKeyCollectionInterface
 {
@@ -22,7 +21,6 @@ class HttpCodeKeyCollection extends AbstractCollection implements HttpCodeKeyCol
         $this->getValueValidatorChain()
             ->append(new IntegerValidator())
             ->append(new NumericRangeValidator(100, 599))
-            ->append(new UniqueValidator())
             ->lock();
 
     }
