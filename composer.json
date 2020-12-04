@@ -3,10 +3,13 @@
     "description": "LDL HTTP Core Request/Response libraries",
     "type": "library",
     "require": {
+        "ldl-framework/typed-collection": "dev-master",
         "symfony/http-foundation": "~5.1",
         "symfony/mime": "~5.1"
     },
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Federico Stange",
