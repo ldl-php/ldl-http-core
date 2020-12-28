@@ -121,4 +121,14 @@ interface RequestInterface
      */
     public function isConnect(): bool;
 
+    /**
+     * @param int $depth
+     * @param int $options
+     * @return array|null
+     */
+    public function getJsonBody(
+        int $depth = 512,
+        int $options = \JSON_THROW_ON_ERROR
+    ) : ?array;
+
 }

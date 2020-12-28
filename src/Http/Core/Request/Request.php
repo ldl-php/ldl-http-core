@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class Request extends SymfonyRequest implements RequestInterface
 {
+    private $_json = ['body' => null, 'options' => \JSON_THROW_ON_ERROR];
+
     /**
      * {@inheritdoc}
      */
@@ -106,13 +108,37 @@ class Request extends SymfonyRequest implements RequestInterface
         return $this->isMethod(RequestInterface::HTTP_METHOD_CONNECT);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getRequestUri(): string
     {
         return parent::getRequestUri();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getMethod() : string
     {
         return (string) parent::getMethod();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getJsonBody(
+        int $depth = 512,
+        int $options = \JSON_THROW_ON_ERROR
+    ) : ?array
+    {
+        if(null !== $this->_json['body'] && $this->_json['options'] === $options){
+            return $this->_json['body'];
+        }
+
+        $this->_json['body'] = json_decode($this->getContent(), true , $depth, $options);
+        $this->_json['options'] = $options;
+
+        return $this->_json['body'];
     }
 }

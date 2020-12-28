@@ -5,7 +5,8 @@
     "require": {
         "ldl-framework/typed-collection": "dev-master",
         "symfony/http-foundation": "~5.1",
-        "symfony/mime": "~5.1"
+        "symfony/mime": "~5.1",
+        "ext-json": "*"
     },
     "license": "MIT",
     "minimum-stability": "dev",
