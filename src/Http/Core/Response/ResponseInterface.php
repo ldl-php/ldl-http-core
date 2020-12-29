@@ -75,6 +75,11 @@ interface ResponseInterface
     public const HTTP_CODE_NOT_EXTENDED = 510;                                                // RFC2774
     public const HTTP_CODE_NETWORK_AUTHENTICATION_REQUIRED = 511;                             // RFC6585
 
+    /**
+     * Non official HTTP bad response code
+     */
+    public const HTTP_CODE_BAD_RESPONSE = 520;
+
     public function sendHeaders();
 
     public function sendContent();
