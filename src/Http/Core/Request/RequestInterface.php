@@ -2,6 +2,7 @@
 
 namespace LDL\Http\Core\Request;
 
+use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -130,5 +131,10 @@ interface RequestInterface
         int $depth = 512,
         int $options = \JSON_THROW_ON_ERROR
     ) : ?array;
+
+    /**
+     * @return FileBag
+     */
+    public function getFiles() : FileBag;
 
 }

@@ -2,6 +2,7 @@
 
 namespace LDL\Http\Core\Request;
 
+use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
@@ -141,4 +142,13 @@ class Request extends SymfonyRequest implements RequestInterface
 
         return $this->_json['body'];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFiles(): FileBag
+    {
+        return $this->files;
+    }
+
 }
