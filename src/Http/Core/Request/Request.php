@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
+use Symfony\Component\HttpFoundation\ServerBag;
 
 class Request extends SymfonyRequest implements RequestInterface
 {
@@ -149,6 +150,14 @@ class Request extends SymfonyRequest implements RequestInterface
     public function getFiles(): FileBag
     {
         return $this->files;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getServerParameters() : ServerBag
+    {
+        return $this->server;
     }
 
 }

@@ -5,6 +5,7 @@ namespace LDL\Http\Core\Request;
 use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\ServerBag;
 
 interface RequestInterface
 {
@@ -136,5 +137,10 @@ interface RequestInterface
      * @return FileBag
      */
     public function getFiles() : FileBag;
+
+    /**
+     * @return ServerBag
+     */
+    public function getServerParameters() : ServerBag;
 
 }
