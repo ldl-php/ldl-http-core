@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "LDL\\": "src/"
+            "LDL\\Http\\Core\\": "src/Http/Core"
         }
     }
 }

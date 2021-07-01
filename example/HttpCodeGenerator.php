@@ -2,8 +2,8 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use LDL\Http\Helper\HttpCodeKeyCollection;
-use LDL\Http\Helper\HttpCodeValueCollection;
+use LDL\Http\Core\Collection\HttpCodeKeyCollection;
+use LDL\Http\Core\Collection\HttpCodeValueCollection;
 
 /*
 echo "Generate single response code\n\n";
@@ -21,14 +21,14 @@ echo "\nCreate Http Code Key Collection\n\n";
 $collection = new HttpCodeKeyCollection();
 
 echo "Add code range, 200-205\n\n";
-$collection->append('200-205');
+$collection->appendRange('200-205');
 
 foreach($collection as $httpCode => $value){
     echo "$httpCode => $value\n";
 }
 
 echo "Add another range, except this time is 203-206\n\n";
-$collection->append('203-206');
+$collection->appendRange('203-206');
 
 foreach($collection as $httpCode => $value){
     echo "$httpCode => $value\n";
@@ -45,7 +45,7 @@ try {
 echo "Create Http code value collection (keys are http codes)\n";
 
 $collection = new HttpCodeValueCollection();
-$collection->append('test', '400-420');
+$collection->appendRange('test', '400-420');
 
 foreach($collection as $httpCode => $value){
     echo "$httpCode => $value\n";
