@@ -1,6 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace LDL\Http\Helper;
+namespace LDL\Http\Core\Helper;
+
+use LDL\Http\Core\Collection\HttpCodeKeyCollection;
+use LDL\Http\Core\Collection\HttpCodeKeyCollectionInterface;
+use LDL\Http\Core\Collection\HttpCodeValueCollection;
+use LDL\Http\Core\Collection\HttpCodeValueCollectionInterface;
 
 class HttpCodeGenerator
 {
