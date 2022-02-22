@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace LDL\Http\Core\Response;
 
@@ -76,7 +78,7 @@ interface ResponseInterface
     public const HTTP_CODE_NETWORK_AUTHENTICATION_REQUIRED = 511;                             // RFC6585
 
     /**
-     * Non official HTTP bad response code
+     * Non official HTTP bad response code.
      */
     public const HTTP_CODE_BAD_RESPONSE = 520;
 
@@ -94,7 +96,7 @@ interface ResponseInterface
 
     public function getProtocolVersion(): string;
 
-    public function setStatusCode(int $code, $text = null);
+    public function setStatusCode(int $code, ?string $text = null);
 
     public function getStatusCode(): int;
 
