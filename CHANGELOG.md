@@ -13,4 +13,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- fixes/1200549021075051 - Fix to comply with typed-collection
+- fix/1200549021075051 - Fix to comply with typed-collection
+- fix/1201865016765015 - Change signature of ResponseInterface::setStatusCode
